@@ -1,0 +1,23 @@
+{
+  "name": "@vaultagent/agent",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch server.ts",
+    "start": "tsx server.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "@x402/core": "latest",
+    "@x402/evm": "latest",
+    "@x402/hono": "latest",
+    "@hono/node-server": "latest",
+    "hono": "latest",
+    "ethers": "^6.13.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}

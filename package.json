@@ -1,0 +1,21 @@
+{
+  "name": "vaultagent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VaultAgent — AI Encrypted Conditional Escrow on SKALE via BITE v2",
+  "workspaces": [
+    "contracts",
+    "agent",
+    "web"
+  ],
+  "scripts": {
+    "compile": "npm run compile --workspace=contracts",
+    "test": "npm run test --workspace=contracts",
+    "deploy": "npm run deploy --workspace=contracts",
+    "dev:agent": "npm run dev --workspace=agent",
+    "dev:web": "npm run dev --workspace=web",
+    "build:web": "npm run build --workspace=web"
+  },
+  "author": "VaultAgent Team",
+  "license": "MIT"
+}
