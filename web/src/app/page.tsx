@@ -55,6 +55,12 @@ export default function HomePage() {
     try {
       const signer = await connectWallet();
       if (!signer) { setStep("error"); return; }
+      const signerAddr = await signer.getAddress();
+      if (seller.toLowerCase() === signerAddr.toLowerCase()) {
+        setError("Cannot create an escrow to yourself. Use a different seller address.");
+        setStep("error");
+        return;
+      }
       setStep("encrypting");
       const amountWei = ethers.parseEther(amount);
       const encrypted = await encryptEscrowTerms(amountWei);
