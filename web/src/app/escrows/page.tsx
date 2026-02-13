@@ -124,7 +124,7 @@ export default function EscrowsPage() {
                 {e.receiptURI && (
                   <div className="detail-row">
                     <span className="detail-label">Receipt</span>
-                    <a href={e.receiptURI} target="_blank" rel="noopener noreferrer" className="text-[var(--pink)] text-xs hover:underline">{e.receiptURI.slice(0, 30)}...</a>
+                    <a href={e.receiptURI} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] text-xs hover:underline">{e.receiptURI.slice(0, 30)}...</a>
                   </div>
                 )}
               </div>
@@ -134,7 +134,7 @@ export default function EscrowsPage() {
                   {e.buyer.toLowerCase() === account.toLowerCase() && (
                     <>
                       <button onClick={() => handleAction(e.id, "refund")} disabled={actionLoading === e.id} className="btn-ghost">Claim Refund</button>
-                      <button onClick={() => handleAction(e.id, "dispute")} disabled={actionLoading === e.id} className="btn-ghost !text-[var(--red)] !border-[rgba(255,67,67,0.2)] hover:!border-[rgba(255,67,67,0.4)]">Dispute</button>
+                      <button onClick={() => handleAction(e.id, "dispute")} disabled={actionLoading === e.id} className="btn-ghost !text-[var(--red)] !border-[rgba(248,113,113,0.2)] hover:!border-[rgba(248,113,113,0.4)]">Dispute</button>
                     </>
                   )}
                   {e.seller.toLowerCase() === account.toLowerCase() && (

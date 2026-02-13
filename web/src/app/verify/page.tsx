@@ -104,7 +104,7 @@ function VerifyContent() {
                 <label className="text-xs text-[var(--text-3)] mb-1.5 block">Proof of Delivery</label>
                 <textarea className="input-field" style={{ minHeight: "100px" }} placeholder="URLs, descriptions, logs..." value={proof} onChange={(e) => setProof(e.target.value)} required />
               </div>
-              {error && <div className="card-inner p-3 !border-[rgba(255,67,67,0.2)]"><p className="text-[var(--red)] text-sm">{error}</p></div>}
+              {error && <div className="card-inner p-3 !border-[rgba(248,113,113,0.2)]"><p className="text-[var(--red)] text-sm">{error}</p></div>}
               <button type="submit" className="btn-primary" disabled={loading}>
                 {loading ? <span className="flex items-center justify-center gap-2"><span className="spinner" /> Analyzing...</span> : "Request AI Verification"}
               </button>
@@ -115,7 +115,7 @@ function VerifyContent() {
           {result && (
             <div className="card p-5">
               <div className="flex items-center gap-3 mb-4">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${result.passed ? "bg-[rgba(39,174,96,0.1)]" : "bg-[rgba(255,67,67,0.1)]"}`}>
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${result.passed ? "bg-[rgba(52,211,153,0.1)]" : "bg-[rgba(248,113,113,0.1)]"}`}>
                   {result.passed ? (
                     <svg className="w-6 h-6 text-[var(--green)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                   ) : (
@@ -153,12 +153,12 @@ function VerifyContent() {
               )}
 
               {releaseTxHash && (
-                <div className="card-inner p-4 !border-[rgba(39,174,96,0.2)]">
+                <div className="card-inner p-4 !border-[rgba(52,211,153,0.2)]">
                   <div className="flex items-center gap-2 text-[var(--green)] mb-1.5">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                     <span className="font-semibold text-sm">Payment Released</span>
                   </div>
-                  <a href={`${EXPLORER_URL}/tx/${releaseTxHash}`} target="_blank" rel="noopener noreferrer" className="text-[var(--pink)] text-xs font-mono hover:underline break-all">{releaseTxHash}</a>
+                  <a href={`${EXPLORER_URL}/tx/${releaseTxHash}`} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] text-xs font-mono hover:underline break-all">{releaseTxHash}</a>
                 </div>
               )}
             </div>
@@ -189,7 +189,7 @@ function VerifyContent() {
               <h3 className="text-xs font-semibold text-[var(--text-3)] mb-2.5">Privacy</h3>
               <div className="space-y-2 text-[0.7rem] text-[var(--text-3)]">
                 <div className="flex items-center gap-2">
-                  <span className="step-dot" style={{ background: "var(--pink)" }} />
+                  <span className="step-dot" style={{ background: "var(--accent)" }} />
                   Amount encrypted until release
                 </div>
                 <div className="flex items-center gap-2">
@@ -197,7 +197,7 @@ function VerifyContent() {
                   AI verification triggers decrypt
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="step-dot" style={{ background: "var(--blue)" }} />
+                  <span className="step-dot" style={{ background: "var(--amber)" }} />
                   All steps logged on-chain
                 </div>
               </div>

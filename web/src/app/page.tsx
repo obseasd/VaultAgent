@@ -95,7 +95,7 @@ export default function HomePage() {
       <div className="card p-4 w-full max-w-[480px]">
         {step === "done" ? (
           <div className="py-6 text-center">
-            <div className="w-14 h-14 rounded-full bg-[rgba(39,174,96,0.1)] flex items-center justify-center mx-auto mb-4">
+            <div className="w-14 h-14 rounded-full bg-[rgba(52,211,153,0.1)] flex items-center justify-center mx-auto mb-4">
               <svg className="w-7 h-7 text-[var(--green)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
@@ -108,7 +108,7 @@ export default function HomePage() {
               <div className="detail-row"><span className="detail-label">Encryption</span><span className="badge badge-encrypted">BITE v2</span></div>
               <div className="detail-row">
                 <span className="detail-label">Tx Hash</span>
-                <a href={`${EXPLORER_URL}/tx/${txHash}`} target="_blank" rel="noopener noreferrer" className="text-[var(--pink)] text-xs font-mono hover:underline">
+                <a href={`${EXPLORER_URL}/tx/${txHash}`} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] text-xs font-mono hover:underline">
                   {txHash.slice(0, 10)}...{txHash.slice(-8)}
                 </a>
               </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Amount — big number style */}
+            {/* Amount */}
             <div className="card-inner p-4 mb-1">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs text-[var(--text-3)]">Amount</span>
@@ -134,7 +134,7 @@ export default function HomePage() {
               <div className="flex items-center gap-3">
                 <input type="number" step="0.001" className="input-big flex-1" placeholder="0.0" value={amount} onChange={(e) => setAmount(e.target.value)} required />
                 <div className="bg-[var(--surface-2)] rounded-2xl px-3 py-1.5 text-sm font-semibold text-[var(--text-1)] flex items-center gap-1.5 shrink-0">
-                  <span className="w-5 h-5 rounded-full bg-gradient-to-br from-[var(--pink)] to-[var(--purple)]" />
+                  <span className="w-5 h-5 rounded-full bg-gradient-to-br from-[var(--steel)] to-[var(--accent)]" />
                   sFUEL
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function HomePage() {
           { icon: "M13 10V3L4 14h7v7l9-11h-7z", title: "Zero Gas", sub: "SKALE network" },
         ].map((c) => (
           <div key={c.title} className="card p-3 text-center hover-card">
-            <svg className="w-5 h-5 text-[var(--pink)] mx-auto mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <svg className="w-5 h-5 text-[var(--accent)] mx-auto mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
               <path strokeLinecap="round" strokeLinejoin="round" d={c.icon} />
             </svg>
             <p className="text-xs font-semibold text-[var(--text-1)]">{c.title}</p>

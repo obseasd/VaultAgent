@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "VaultAgent — Encrypted Conditional Escrow",
   description:
     "AI-powered encrypted conditional payments on SKALE via BITE v2",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -19,10 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* Background effects */}
         <div className="fixed inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-vault-600/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-vault-800/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-slate-500/3 rounded-full blur-3xl" />
         </div>
         <ClientLayout>{children}</ClientLayout>
       </body>

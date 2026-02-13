@@ -3,18 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --pink: #ff007a;
-  --purple: #7b3fe4;
-  --blue: #2172e5;
-  --green: #27ae60;
-  --red: #ff4343;
-  --surface-1: #191b1f;
-  --surface-2: #212429;
-  --surface-3: #2c2f36;
-  --surface-4: #40444f;
-  --text-1: #ffffff;
-  --text-2: #c3c5cb;
-  --text-3: #6c7284;
+  /* Palette extracted from vault logo */
+  --accent: #60a5fa;        /* Light blue (keyhole) */
+  --accent-soft: #93c5fd;   /* Lighter blue */
+  --amber: #f59e0b;         /* Amber (indicator lights) */
+  --steel: #7a8599;         /* Steel grey (body) */
+  --green: #34d399;
+  --red: #f87171;
+  --surface-1: #0f1117;
+  --surface-2: #181a22;
+  --surface-3: #242731;
+  --surface-4: #363a47;
+  --text-1: #e8ecf2;
+  --text-2: #a0a9b8;
+  --text-3: #5d6577;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* === Uniswap-style components === */
+/* === Components === */
 
 .card {
   background: var(--surface-2);
@@ -38,9 +40,9 @@ body {
   border-radius: 16px;
 }
 
-/* Primary CTA */
+/* Primary CTA — steel-to-blue gradient */
 .btn-primary {
-  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background: linear-gradient(135deg, #4a6178, var(--accent));
   color: white;
   padding: 16px;
   border-radius: 20px;
@@ -75,19 +77,19 @@ body {
 
 /* Accent ghost */
 .btn-accent {
-  background: rgba(255, 0, 122, 0.08);
-  color: var(--pink);
+  background: rgba(96, 165, 250, 0.08);
+  color: var(--accent);
   padding: 8px 14px;
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(255, 0, 122, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.15);
   cursor: pointer;
   transition: all 0.15s;
 }
 .btn-accent:hover {
-  background: rgba(255, 0, 122, 0.14);
-  border-color: rgba(255, 0, 122, 0.25);
+  background: rgba(96, 165, 250, 0.14);
+  border-color: rgba(96, 165, 250, 0.3);
 }
 
 /* Nav pill */
@@ -113,11 +115,11 @@ body {
   outline: none;
   transition: border-color 0.15s;
 }
-.input-field:focus { border-color: var(--surface-4); }
+.input-field:focus { border-color: var(--accent); }
 .input-field::placeholder { color: var(--text-3); }
 textarea.input-field { resize: vertical; font-family: inherit; min-height: 80px; }
 
-/* Big number input (like Uniswap token amount) */
+/* Big number input */
 .input-big {
   background: transparent;
   border: none;
@@ -140,14 +142,14 @@ textarea.input-field { resize: vertical; font-family: inherit; min-height: 80px;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
-.badge-active { background: rgba(33,114,229,0.1); color: var(--blue); }
-.badge-released { background: rgba(39,174,96,0.1); color: var(--green); }
-.badge-refunded { background: rgba(108,114,132,0.1); color: var(--text-3); }
-.badge-disputed { background: rgba(255,67,67,0.1); color: var(--red); }
-.badge-encrypted { background: rgba(255,0,122,0.08); color: var(--pink); }
-.badge-info { background: rgba(123,63,228,0.1); color: var(--purple); }
+.badge-active { background: rgba(96, 165, 250, 0.1); color: var(--accent); }
+.badge-released { background: rgba(52, 211, 153, 0.1); color: var(--green); }
+.badge-refunded { background: rgba(93, 101, 119, 0.1); color: var(--text-3); }
+.badge-disputed { background: rgba(248, 113, 113, 0.1); color: var(--red); }
+.badge-encrypted { background: rgba(96, 165, 250, 0.08); color: var(--accent); }
+.badge-info { background: rgba(245, 158, 11, 0.1); color: var(--amber); }
 
-/* Info rows (like Uniswap swap details) */
+/* Info rows */
 .detail-row {
   display: flex;
   justify-content: space-between;
@@ -164,7 +166,7 @@ textarea.input-field { resize: vertical; font-family: inherit; min-height: 80px;
 .spinner {
   width: 18px; height: 18px;
   border: 2px solid transparent;
-  border-top-color: var(--pink);
+  border-top-color: var(--accent);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   display: inline-block;
@@ -173,7 +175,7 @@ textarea.input-field { resize: vertical; font-family: inherit; min-height: 80px;
 /* Step dots */
 .step-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .step-pending { background: var(--surface-4); }
-.step-active { background: var(--pink); animation: blink 1.4s infinite; }
+.step-active { background: var(--accent); animation: blink 1.4s infinite; }
 .step-done { background: var(--green); }
 .step-error { background: var(--red); }
 @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.35} }
@@ -189,8 +191,12 @@ textarea.input-field { resize: vertical; font-family: inherit; min-height: 80px;
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, var(--pink), var(--purple));
+  background: linear-gradient(90deg, var(--steel), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Hover card glow */
+.hover-card { transition: border-color 0.2s; }
+.hover-card:hover { border-color: var(--surface-4); }

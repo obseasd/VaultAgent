@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { WalletProvider, useWallet } from "@/lib/wallet";
 
@@ -22,7 +23,7 @@ function WalletButton() {
   return (
     <button
       onClick={() => connect()}
-      className="bg-[rgba(255,0,122,0.08)] text-[var(--pink)] border border-[rgba(255,0,122,0.12)] rounded-2xl px-5 py-2.5 text-sm font-semibold hover:bg-[rgba(255,0,122,0.14)] transition-colors"
+      className="bg-[rgba(96,165,250,0.08)] text-[var(--accent)] border border-[rgba(96,165,250,0.15)] rounded-2xl px-5 py-2.5 text-sm font-semibold hover:bg-[rgba(96,165,250,0.14)] transition-colors"
     >
       Connect Wallet
     </button>
@@ -45,11 +46,7 @@ function Navbar() {
           {/* Left: Logo + nav */}
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--pink)] to-[var(--purple)] flex items-center justify-center">
-                <svg className="w-4.5 h-4.5 text-white" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
+              <Image src="/logo.png" alt="VaultAgent" width={36} height={36} className="rounded-lg" />
               <span className="text-lg font-bold gradient-text">VaultAgent</span>
             </Link>
 
