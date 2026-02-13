@@ -1,5 +1,5 @@
 export const VAULT_ESCROW_ADDRESS =
-  process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "";
+  process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "0xBFd5542a97E96D8F2E2D1A39E839c7A15bA731E1";
 
 export const CHAIN_ID = parseInt(
   process.env.NEXT_PUBLIC_CHAIN_ID || "103698795",
